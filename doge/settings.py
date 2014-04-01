@@ -28,7 +28,7 @@ TEMPLATE_DEBUG = False
 SERVER_EMAIL = 'server@dogeteller.com'
 
 ADMINS = (
-    ('Dave', 'waltznumbertwo.dave@gmail.com'),
+    (''),
 )
 
 MANAGERS = ADMINS
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'USER' : 'test',
-        'PASSWORD' : 'test',
+        'USER' : '',
+        'PASSWORD' : '',
         'HOST': '',
         'PORT' : '',
     }
