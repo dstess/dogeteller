@@ -1,0 +1,62 @@
+from django.shortcuts import render_to_response
+from django.http import HttpResponse, HttpRequest, QueryDict
+from doge.models import Response
+from doge.models import Response2
+from doge.models import ResponseGood
+from doge.models import ResponseBad
+from doge.models import ResponseNeutral
+from doge.models import GoodFortune
+from doge.models import NeutralFortune
+from doge.models import BadFortune
+from doge.models import DefaultFortune
+import random
+
+def index(request):
+    entries1 = Response.objects.order_by('?')[0:1]
+    entries2 = Response.objects.order_by('?')[0:1]
+    entries3 = Response.objects.order_by('?')[0:1]
+    entries11 = DefaultFortune.objects.order_by('?')[0:1]
+    entries22 = DefaultFortune.objects.order_by('?')[0:1]
+    entries33 = DefaultFortune.objects.order_by('?')[0:1]
+    return render_to_response('index.html', locals())
+    
+    
+def submit(request):
+    Year = request.GET.get('Year', '')
+    FirstName = request.GET.get('FirstName', '')
+    Str = random.randint(1,10)
+    
+    entries1 = Response.objects.order_by('?')[0:1]
+    entries2 = Response.objects.order_by('?')[0:1]
+    entries3 = Response.objects.order_by('?')[0:1]
+    
+    entries11 = ResponseGood.objects.order_by('?')[0:1]
+    entries22 = ResponseGood.objects.order_by('?')[0:1]
+    entries33 = ResponseGood.objects.order_by('?')[0:1]
+    
+    entries44 = ResponseBad.objects.order_by('?')[0:1]
+    entries55 = ResponseBad.objects.order_by('?')[0:1]
+    entries66 = ResponseBad.objects.order_by('?')[0:1]
+    
+    entries77 = ResponseNeutral.objects.order_by('?')[0:1]
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+    entries99 = ResponseNeutral.objects.order_by('?')[0:1]
+
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+    entries88 = ResponseNeutral.objects.order_by('?')[0:1]
+
+    entriesgood = GoodFortune.objects.order_by('?')[0:1]
+    entriesgood2 = GoodFortune.objects.order_by('?')[0:1]
+
+    entriesneutral = NeutralFortune.objects.order_by('?')[0:1]
+    entriesneutral2 = NeutralFortune.objects.order_by('?')[0:1]
+
+    entriesbad = BadFortune.objects.order_by('?')[0:1]
+    entriesbad2 = BadFortune.objects.order_by('?')[0:1]
+    return render_to_response('submit.html', locals() )

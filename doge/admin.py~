@@ -1,0 +1,26 @@
+from django.contrib import admin
+from doge.models import Response2
+from doge.models import Response
+from doge.models import ResponseGood
+from doge.models import ResponseBad
+from doge.models import ResponseNeutral
+from doge.models import GoodFortune
+from doge.models import NeutralFortune
+from doge.models import BadFortune
+from doge.models import DefaultFortune
+
+class AdminResponse(admin.ModelAdmin):
+    pass
+
+class AdminResponse2(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Response2, AdminResponse2)
+admin.site.register(Response, AdminResponse)
+admin.site.register(ResponseGood, AdminResponse)
+admin.site.register(ResponseBad, AdminResponse)
+admin.site.register(GoodFortune, AdminResponse)
+admin.site.register(NeutralFortune, AdminResponse)
+admin.site.register(BadFortune, AdminResponse)
+admin.site.register(DefaultFortune, AdminResponse)
